@@ -1,0 +1,5 @@
+name: ClassicHunger
+version: 2.0
+description: Good old hunger system, from the old times.
+author: TheNewTao
+main: me.thenewtao.classichunger.ClassicHungerMain
