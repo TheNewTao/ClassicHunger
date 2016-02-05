@@ -2,6 +2,7 @@ package me.thenewtao.classichunger;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.UUID;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -11,8 +12,8 @@ import me.thenewtao.events.EventListener;
 
 public class ClassicHungerMain extends JavaPlugin {
 
-	public HashMap<String, Long> cooldown = new HashMap<String, Long>();
-	public HashMap<Material, Integer> foodType = new HashMap<Material, Integer>();
+	private HashMap<UUID, Long> cooldown = new HashMap<UUID, Long>();
+	private HashMap<Material, Integer> foodType = new HashMap<Material, Integer>();
 
 	@Override
 	public void onEnable() {
@@ -53,6 +54,14 @@ public class ClassicHungerMain extends JavaPlugin {
 		if (!config.exists()) {
 			saveConfig();
 		}
+	}
+
+	public HashMap<UUID, Long> getCooldown() {
+		return cooldown;
+	}
+
+	public HashMap<Material, Integer> getFoodType() {
+		return foodType;
 	}
 
 }
